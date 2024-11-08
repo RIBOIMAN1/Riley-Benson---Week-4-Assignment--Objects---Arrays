@@ -35,3 +35,21 @@ console.log(sum(range(5, 14))); // Outputs "95" to the console
 // let arrayValue = [1, 2, 3, 4, 5];
 // reverseArrayInPlace(arrayValue);
 // console.log(arrayValue); // outputs [5, 4, 3, 2, 1]
+function reverseArray(array) {
+    let newArray = [];
+    for (let i = array.length - 1; i >= 0; i--) {
+      newArray.push(array[i]);
+    }
+    return newArray;
+}
+console.log(reverseArray(["X", "Y", "Z"])); // Outputs "["Z", "Y", "X"]" to the console
+function reverseArrayInPlace(array) {
+    for (let i = 0; i < Math.floor(array.length / 2); i++) {
+      let temp = array[i];
+      array[i] = array[array.length - 1 - i];
+      array[array.length - 1 - i] = temp;
+    }
+}
+let arrayValue = [10, 11, 12, 13, 14];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue); // Outputs "[14, 13, 12, 11, 10]" to the console
